@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2012 - 2014 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2012 - 2018 Xilinx, Inc.  All rights reserved.
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal 
@@ -228,7 +228,18 @@
 *                       not correct.
 *                       Resolution: Corresponding fields in the devcfg.STATUS
 *                       register are written to, for clearing DMA done count.
-*
+* 14.00a gan 01/13/16   869081 -(2016.1)FSBL -In qspi.c, FSBL picks the qspi
+*						read command from LQSPI_CFG register instead of hard
+*		   				coded read command (0x6B).
+* 15.00a gan 07/21/16   953654 -(2016.3)FSBL -In pcap.c/pcap.h/main.c,
+* 						Fabric Initialization sequence is modified to check
+* 						the PL power before sequence starts and checking INIT_B
+* 						reset status twice in case of failure.
+* 16.00a gan 08/02/16   Fix for CR# 955897 -(2016.3)FSBL -
+* 						In pcap.c, check pl power through MCTRL register
+* 						for 3.0 and later versions of silicon.
+* 17.00a bsv 27/03/18	Fix for CR# 996973  Add code under JTAG_ENABLE_LEVEL_SHIFTERS macro
+* 						to enable level shifters in jtag boot mode.
 * </pre>
 *
 * </pre>
@@ -287,6 +298,10 @@
 * MMC_SUPPORT
 * This flag is used to enable MMC support feature
 *
+* JTAG_ENABLE_LEVEL_SHIFTERS
+* FSBL will not enable the level shifters for jtag boot mode. This flag can be
+* set during compilation for jtag boot mode to enable level shifters.
+*
 *******************************************************************************/
 #ifndef XIL_FSBL_H
 #define XIL_FSBL_H
@@ -313,8 +328,8 @@ extern "C" {
 /*
  * SDK release version
  */
-#define SDK_RELEASE_YEAR	2015
-#define SDK_RELEASE_QUARTER	4
+#define SDK_RELEASE_YEAR	2018
+#define SDK_RELEASE_QUARTER	2
 
 #define WORD_LENGTH_SHIFT	2
 

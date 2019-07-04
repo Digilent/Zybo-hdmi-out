@@ -1,6 +1,6 @@
 /******************************************************************************
 *
-* Copyright (C) 2012 - 2014 Xilinx, Inc.  All rights reserved.
+* Copyright (C) 2012 - 2018 Xilinx, Inc.  All rights reserved.
 * 
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal 
@@ -99,6 +99,15 @@
 * 11.00a kv 10/08/14	Fix for CR#826030 - LinearBootDeviceFlag should
 *											be initialized to 0 in IO mode
 *											case
+* 15.00a gan 07/21/16   Fix for CR# 953654 -(2016.3)FSBL -
+* 											In pcap.c/pcap.h/main.c,
+* 											Fabric Initialization sequence
+* 											is modified to check the PL power
+* 											before sequence starts and checking
+* 											INIT_B reset status twice in case
+* 											of failure.
+* 16.00a bsv 03/26/18	Fix for CR# 996973  Add code under JTAG_ENABLE_LEVEL_SHIFTERS macro
+* 											to enable level shifters in jtag boot mode.
 * </pre>
 *
 * @note
@@ -136,7 +145,9 @@
 #endif
 
 #ifdef STDOUT_BASEADDRESS
+#ifdef XPAR_XUARTPS_0_BASEADDR
 #include "xuartps_hw.h"
+#endif
 #endif
 
 #ifdef RSA_SUPPORT
@@ -231,7 +242,7 @@ int main(void)
 	u32 BootModeRegister = 0;
 	u32 HandoffAddress = 0;
 	u32 Status = XST_SUCCESS;
-
+	u32 RegVal;
 	/*
 	 * PCW initialization for MIO,PLL,CLK and DDR
 	 */
@@ -483,6 +494,19 @@ int main(void)
 	 */
 	if (BootModeRegister == JTAG_MODE) {
 		fsbl_printf(DEBUG_GENERAL,"Boot mode is JTAG\r\n");
+
+		RegVal = Xil_In32(XPS_DEV_CFG_APB_BASEADDR + XDCFG_INT_STS_OFFSET);
+		/** If bitstream was loaded in jtag boot mode prior to running FSBL */
+		if(RegVal & XDCFG_IXR_PCFG_DONE_MASK)
+		{
+#ifdef PS7_POST_CONFIG
+		ps7_post_config();
+		/*
+		 * Unlock SLCR for SLCR register write
+		 */
+		SlcrUnlock();
+#endif
+		}
 		/*
 		 * Stop the Watchdog before JTAG handoff
 		 */
@@ -646,7 +670,11 @@ void FsblFallback(void)
 			/*
 			 * Clean the Fabric
 			 */
-			FabricInit();
+			Status = FabricInit();
+			if(Status != XST_SUCCESS){
+				ClearFSBLIn();
+				FsblHookFallback();
+			}
 
 #ifdef RSA_SUPPORT
 
@@ -798,7 +826,9 @@ void FsblHandoff(u32 FsblStartAddr)
 void OutputStatus(u32 State)
 {
 #ifdef STDOUT_BASEADDRESS
+#ifdef XPAR_XUARTPS_0_BASEADDR
 	u32 UartReg = 0;
+#endif
 
 	fsbl_printf(DEBUG_GENERAL,"FSBL Status = 0x%.4lx\r\n", State);
 	/*
@@ -806,10 +836,12 @@ void OutputStatus(u32 State)
 	 * If this is not done some of the prints will not appear on the
 	 * serial output
 	 */
+#ifdef XPAR_XUARTPS_0_BASEADDR
 	UartReg = Xil_In32(STDOUT_BASEADDRESS + XUARTPS_SR_OFFSET);
 	while ((UartReg & XUARTPS_SR_TXEMPTY) != XUARTPS_SR_TXEMPTY) {
 		UartReg = Xil_In32(STDOUT_BASEADDRESS + XUARTPS_SR_OFFSET);
 	}
+#endif
 #endif
 }
 

@@ -91,12 +91,12 @@
 
 ##Audio Codec/external EEPROM IIC bus
 #IO_L13P_T2_MRCC_34
-set_property PACKAGE_PIN N18 [get_ports iic_0_scl_io]
-set_property IOSTANDARD LVCMOS33 [get_ports iic_0_scl_io]
+set_property PACKAGE_PIN N18 [get_ports IIC_0_scl_io]
+set_property IOSTANDARD LVCMOS33 [get_ports IIC_0_scl_io]
 
 #IO_L23P_T3_34
-set_property PACKAGE_PIN N17 [get_ports iic_0_sda_io]
-set_property IOSTANDARD LVCMOS33 [get_ports iic_0_sda_io]
+set_property PACKAGE_PIN N17 [get_ports IIC_0_sda_io]
+set_property IOSTANDARD LVCMOS33 [get_ports IIC_0_sda_io]
 
 ##Additional Ethernet signals
 ##IO_L6P_T0_35
@@ -141,20 +141,20 @@ set_property IOSTANDARD TMDS_33 [get_ports {TMDS_data_p[2]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports hdmi_cec]
 
 #IO_L5P_T0_AD9P_35
-set_property PACKAGE_PIN E18 [get_ports {hdmi_hpd_tri_i[0]}]
-set_property IOSTANDARD LVCMOS33 [get_ports {hdmi_hpd_tri_i[0]}]
+set_property PACKAGE_PIN E18 [get_ports {HDMI_HPD_tri_i[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {HDMI_HPD_tri_i[0]}]
 
 ##IO_L6N_T0_VREF_35
 set_property PACKAGE_PIN F17 [get_ports {HDMI_OEN[0]}]
 set_property IOSTANDARD LVCMOS33 [get_ports {HDMI_OEN[0]}]
 
 #IO_L16P_T2_35
-set_property PACKAGE_PIN G17 [get_ports hdmi_ddc_scl_io]
-set_property IOSTANDARD LVCMOS33 [get_ports hdmi_ddc_scl_io]
+set_property PACKAGE_PIN G17 [get_ports HDMI_DDC_scl_io]
+set_property IOSTANDARD LVCMOS33 [get_ports HDMI_DDC_scl_io]
 
 #IO_L16N_T2_35
-set_property PACKAGE_PIN G18 [get_ports hdmi_ddc_sda_io]
-set_property IOSTANDARD LVCMOS33 [get_ports hdmi_ddc_sda_io]
+set_property PACKAGE_PIN G18 [get_ports HDMI_DDC_sda_io]
+set_property IOSTANDARD LVCMOS33 [get_ports HDMI_DDC_sda_io]
 
 ##Pmod Header JA (XADC)
 ##IO_L21N_T3_DQS_AD14N_35

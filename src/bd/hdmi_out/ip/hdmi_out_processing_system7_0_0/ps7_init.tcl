@@ -218,11 +218,6 @@ proc ps7_peripherals_init_data_3_0 {} {
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF0000
     mask_delay 0XF8F00200 1
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF4000
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
 }
 proc ps7_post_config_3_0 {} {
     mwr -force 0XF8000008 0x0000DF0D
@@ -456,11 +451,6 @@ proc ps7_peripherals_init_data_2_0 {} {
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF0000
     mask_delay 0XF8F00200 1
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF4000
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
 }
 proc ps7_post_config_2_0 {} {
     mwr -force 0XF8000008 0x0000DF0D
@@ -692,11 +682,6 @@ proc ps7_peripherals_init_data_1_0 {} {
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF0000
     mask_delay 0XF8F00200 1
     mask_write 0XE000A008 0xFFFFFFFF 0xBFFF4000
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
-    mask_delay 0XF8F00200 1
 }
 proc ps7_post_config_1_0 {} {
     mwr -force 0XF8000008 0x0000DF0D
@@ -752,7 +737,10 @@ proc ps_version { } {
 }
 
 proc ps7_post_config {} {
-    variable PCW_SILICON_VER_1_0
+    set saved_mode [configparams force-mem-accesses]                  
+    configparams force-mem-accesses 1 
+    
+	variable PCW_SILICON_VER_1_0
     variable PCW_SILICON_VER_2_0
     variable PCW_SILICON_VER_3_0
     set sil_ver [ps_version]
@@ -764,6 +752,7 @@ proc ps7_post_config {} {
     } else {
         ps7_post_config_3_0   
     }
+	configparams force-mem-accesses $saved_mode                                       
 }
 
 proc ps7_debug {} {

@@ -1,4 +1,3 @@
-
 # (c) Copyright 2009 - 2013 Xilinx, Inc. All rights reserved.
 # 
 # This file contains confidential and proprietary information
@@ -44,7 +43,6 @@
 # 
 # THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
 # PART OF THIS FILE AT ALL TIMES.
-
 
 set_false_path -to [get_pins -hier *cdc_to*/D]
 

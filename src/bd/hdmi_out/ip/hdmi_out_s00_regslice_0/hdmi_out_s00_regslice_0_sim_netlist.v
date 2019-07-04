@@ -1,10 +1,10 @@
-// Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+// Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-// Date        : Fri Feb 24 14:45:49 2017
-// Host        : WK117 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.2 (lin64) Build 2258646 Thu Jun 14 20:02:38 MDT 2018
+// Date        : Wed Jul  3 22:52:50 2019
+// Host        : ashton-desktop running 64-bit Ubuntu 16.04.6 LTS
 // Command     : write_verilog -force -mode funcsim
-//               c:/Users/aholzer/Desktop/zybo-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_s00_regslice_0/hdmi_out_s00_regslice_0_sim_netlist.v
+//               /home/ashton/repo/Zybo-hdmi-out/src/bd/hdmi_out/ip/hdmi_out_s00_regslice_0/hdmi_out_s00_regslice_0_sim_netlist.v
 // Design      : hdmi_out_s00_regslice_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,7 +12,7 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CHECK_LICENSE_TYPE = "hdmi_out_s00_regslice_0,axi_register_slice_v2_1_11_axi_register_slice,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_register_slice_v2_1_11_axi_register_slice,Vivado 2016.4" *) 
+(* CHECK_LICENSE_TYPE = "hdmi_out_s00_regslice_0,axi_register_slice_v2_1_17_axi_register_slice,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_register_slice_v2_1_17_axi_register_slice,Vivado 2018.2" *) 
 (* NotValidForBitStream *)
 module hdmi_out_s00_regslice_0
    (aclk,
@@ -49,8 +49,8 @@ module hdmi_out_s00_regslice_0
     m_axi_rlast,
     m_axi_rvalid,
     m_axi_rready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *) input aclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST RST" *) input aresetn;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK, FREQ_HZ 142857132, PHASE 0.000, CLK_DOMAIN hdmi_out_processing_system7_0_0_FCLK_CLK1, ASSOCIATED_BUSIF S_AXI:M_AXI, ASSOCIATED_RESET ARESETN" *) input aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST, POLARITY ACTIVE_LOW, TYPE INTERCONNECT" *) input aresetn;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARADDR" *) input [31:0]s_axi_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARLEN" *) input [7:0]s_axi_arlen;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI ARSIZE" *) input [2:0]s_axi_arsize;
@@ -66,7 +66,7 @@ module hdmi_out_s00_regslice_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RRESP" *) output [1:0]s_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RLAST" *) output s_axi_rlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RVALID" *) output s_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) input s_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 S_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME S_AXI, DATA_WIDTH 64, PROTOCOL AXI4, FREQ_HZ 142857132, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 16, PHASE 0.000, CLK_DOMAIN hdmi_out_processing_system7_0_0_FCLK_CLK1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) input s_axi_rready;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARADDR" *) output [31:0]m_axi_araddr;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARLEN" *) output [7:0]m_axi_arlen;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI ARSIZE" *) output [2:0]m_axi_arsize;
@@ -82,7 +82,7 @@ module hdmi_out_s00_regslice_0
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RRESP" *) input [1:0]m_axi_rresp;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RLAST" *) input m_axi_rlast;
   (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RVALID" *) input m_axi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *) output m_axi_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 M_AXI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME M_AXI, DATA_WIDTH 64, PROTOCOL AXI4, FREQ_HZ 142857132, ID_WIDTH 0, ADDR_WIDTH 32, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_ONLY, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 0, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 0, HAS_BRESP 0, HAS_RRESP 1, SUPPORTS_NARROW_BURST 0, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 8, MAX_BURST_LENGTH 16, PHASE 0.000, CLK_DOMAIN hdmi_out_processing_system7_0_0_FCLK_CLK1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0" *) output m_axi_rready;
 
   wire aclk;
   wire aresetn;
@@ -160,6 +160,22 @@ module hdmi_out_s00_regslice_0
   (* C_AXI_SUPPORTS_USER_SIGNALS = "0" *) 
   (* C_AXI_WUSER_WIDTH = "1" *) 
   (* C_FAMILY = "zynq" *) 
+  (* C_NUM_SLR_CROSSINGS = "0" *) 
+  (* C_PIPELINES_MASTER_AR = "0" *) 
+  (* C_PIPELINES_MASTER_AW = "0" *) 
+  (* C_PIPELINES_MASTER_B = "0" *) 
+  (* C_PIPELINES_MASTER_R = "0" *) 
+  (* C_PIPELINES_MASTER_W = "0" *) 
+  (* C_PIPELINES_MIDDLE_AR = "0" *) 
+  (* C_PIPELINES_MIDDLE_AW = "0" *) 
+  (* C_PIPELINES_MIDDLE_B = "0" *) 
+  (* C_PIPELINES_MIDDLE_R = "0" *) 
+  (* C_PIPELINES_MIDDLE_W = "0" *) 
+  (* C_PIPELINES_SLAVE_AR = "0" *) 
+  (* C_PIPELINES_SLAVE_AW = "0" *) 
+  (* C_PIPELINES_SLAVE_B = "0" *) 
+  (* C_PIPELINES_SLAVE_R = "0" *) 
+  (* C_PIPELINES_SLAVE_W = "0" *) 
   (* C_REG_CONFIG_AR = "7" *) 
   (* C_REG_CONFIG_AW = "0" *) 
   (* C_REG_CONFIG_B = "0" *) 
@@ -241,8 +257,11 @@ module hdmi_out_s00_regslice_0
   (* G_AXI_WSTRB_WIDTH = "8" *) 
   (* G_AXI_WUSER_INDEX = "73" *) 
   (* G_AXI_WUSER_WIDTH = "0" *) 
-  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice inst
+  (* P_FORWARD = "0" *) 
+  (* P_RESPONSE = "1" *) 
+  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axi_register_slice inst
        (.aclk(aclk),
+        .aclk2x(1'b0),
         .aresetn(aresetn),
         .m_axi_araddr(m_axi_araddr),
         .m_axi_arburst(m_axi_arburst),
@@ -340,36 +359,43 @@ endmodule
 (* C_AXI_BUSER_WIDTH = "1" *) (* C_AXI_DATA_WIDTH = "64" *) (* C_AXI_ID_WIDTH = "1" *) 
 (* C_AXI_PROTOCOL = "0" *) (* C_AXI_RUSER_WIDTH = "1" *) (* C_AXI_SUPPORTS_REGION_SIGNALS = "1" *) 
 (* C_AXI_SUPPORTS_USER_SIGNALS = "0" *) (* C_AXI_WUSER_WIDTH = "1" *) (* C_FAMILY = "zynq" *) 
-(* C_REG_CONFIG_AR = "7" *) (* C_REG_CONFIG_AW = "0" *) (* C_REG_CONFIG_B = "0" *) 
-(* C_REG_CONFIG_R = "1" *) (* C_REG_CONFIG_W = "0" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
-(* G_AXI_ARADDR_INDEX = "0" *) (* G_AXI_ARADDR_WIDTH = "32" *) (* G_AXI_ARBURST_INDEX = "38" *) 
-(* G_AXI_ARBURST_WIDTH = "2" *) (* G_AXI_ARCACHE_INDEX = "40" *) (* G_AXI_ARCACHE_WIDTH = "4" *) 
-(* G_AXI_ARID_INDEX = "53" *) (* G_AXI_ARID_WIDTH = "1" *) (* G_AXI_ARLEN_INDEX = "44" *) 
-(* G_AXI_ARLEN_WIDTH = "8" *) (* G_AXI_ARLOCK_INDEX = "52" *) (* G_AXI_ARLOCK_WIDTH = "1" *) 
-(* G_AXI_ARPAYLOAD_WIDTH = "62" *) (* G_AXI_ARPROT_INDEX = "32" *) (* G_AXI_ARPROT_WIDTH = "3" *) 
-(* G_AXI_ARQOS_INDEX = "54" *) (* G_AXI_ARQOS_WIDTH = "4" *) (* G_AXI_ARREGION_INDEX = "58" *) 
-(* G_AXI_ARREGION_WIDTH = "4" *) (* G_AXI_ARSIZE_INDEX = "35" *) (* G_AXI_ARSIZE_WIDTH = "3" *) 
-(* G_AXI_ARUSER_INDEX = "62" *) (* G_AXI_ARUSER_WIDTH = "0" *) (* G_AXI_AWADDR_INDEX = "0" *) 
-(* G_AXI_AWADDR_WIDTH = "32" *) (* G_AXI_AWBURST_INDEX = "38" *) (* G_AXI_AWBURST_WIDTH = "2" *) 
-(* G_AXI_AWCACHE_INDEX = "40" *) (* G_AXI_AWCACHE_WIDTH = "4" *) (* G_AXI_AWID_INDEX = "53" *) 
-(* G_AXI_AWID_WIDTH = "1" *) (* G_AXI_AWLEN_INDEX = "44" *) (* G_AXI_AWLEN_WIDTH = "8" *) 
-(* G_AXI_AWLOCK_INDEX = "52" *) (* G_AXI_AWLOCK_WIDTH = "1" *) (* G_AXI_AWPAYLOAD_WIDTH = "62" *) 
-(* G_AXI_AWPROT_INDEX = "32" *) (* G_AXI_AWPROT_WIDTH = "3" *) (* G_AXI_AWQOS_INDEX = "54" *) 
-(* G_AXI_AWQOS_WIDTH = "4" *) (* G_AXI_AWREGION_INDEX = "58" *) (* G_AXI_AWREGION_WIDTH = "4" *) 
-(* G_AXI_AWSIZE_INDEX = "35" *) (* G_AXI_AWSIZE_WIDTH = "3" *) (* G_AXI_AWUSER_INDEX = "62" *) 
-(* G_AXI_AWUSER_WIDTH = "0" *) (* G_AXI_BID_INDEX = "2" *) (* G_AXI_BID_WIDTH = "1" *) 
-(* G_AXI_BPAYLOAD_WIDTH = "3" *) (* G_AXI_BRESP_INDEX = "0" *) (* G_AXI_BRESP_WIDTH = "2" *) 
-(* G_AXI_BUSER_INDEX = "3" *) (* G_AXI_BUSER_WIDTH = "0" *) (* G_AXI_RDATA_INDEX = "0" *) 
-(* G_AXI_RDATA_WIDTH = "64" *) (* G_AXI_RID_INDEX = "67" *) (* G_AXI_RID_WIDTH = "1" *) 
-(* G_AXI_RLAST_INDEX = "66" *) (* G_AXI_RLAST_WIDTH = "1" *) (* G_AXI_RPAYLOAD_WIDTH = "68" *) 
-(* G_AXI_RRESP_INDEX = "64" *) (* G_AXI_RRESP_WIDTH = "2" *) (* G_AXI_RUSER_INDEX = "68" *) 
-(* G_AXI_RUSER_WIDTH = "0" *) (* G_AXI_WDATA_INDEX = "0" *) (* G_AXI_WDATA_WIDTH = "64" *) 
-(* G_AXI_WID_INDEX = "73" *) (* G_AXI_WID_WIDTH = "0" *) (* G_AXI_WLAST_INDEX = "72" *) 
-(* G_AXI_WLAST_WIDTH = "1" *) (* G_AXI_WPAYLOAD_WIDTH = "73" *) (* G_AXI_WSTRB_INDEX = "64" *) 
-(* G_AXI_WSTRB_WIDTH = "8" *) (* G_AXI_WUSER_INDEX = "73" *) (* G_AXI_WUSER_WIDTH = "0" *) 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_11_axi_register_slice" *) 
-module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice
+(* C_NUM_SLR_CROSSINGS = "0" *) (* C_PIPELINES_MASTER_AR = "0" *) (* C_PIPELINES_MASTER_AW = "0" *) 
+(* C_PIPELINES_MASTER_B = "0" *) (* C_PIPELINES_MASTER_R = "0" *) (* C_PIPELINES_MASTER_W = "0" *) 
+(* C_PIPELINES_MIDDLE_AR = "0" *) (* C_PIPELINES_MIDDLE_AW = "0" *) (* C_PIPELINES_MIDDLE_B = "0" *) 
+(* C_PIPELINES_MIDDLE_R = "0" *) (* C_PIPELINES_MIDDLE_W = "0" *) (* C_PIPELINES_SLAVE_AR = "0" *) 
+(* C_PIPELINES_SLAVE_AW = "0" *) (* C_PIPELINES_SLAVE_B = "0" *) (* C_PIPELINES_SLAVE_R = "0" *) 
+(* C_PIPELINES_SLAVE_W = "0" *) (* C_REG_CONFIG_AR = "7" *) (* C_REG_CONFIG_AW = "0" *) 
+(* C_REG_CONFIG_B = "0" *) (* C_REG_CONFIG_R = "1" *) (* C_REG_CONFIG_W = "0" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* G_AXI_ARADDR_INDEX = "0" *) (* G_AXI_ARADDR_WIDTH = "32" *) 
+(* G_AXI_ARBURST_INDEX = "38" *) (* G_AXI_ARBURST_WIDTH = "2" *) (* G_AXI_ARCACHE_INDEX = "40" *) 
+(* G_AXI_ARCACHE_WIDTH = "4" *) (* G_AXI_ARID_INDEX = "53" *) (* G_AXI_ARID_WIDTH = "1" *) 
+(* G_AXI_ARLEN_INDEX = "44" *) (* G_AXI_ARLEN_WIDTH = "8" *) (* G_AXI_ARLOCK_INDEX = "52" *) 
+(* G_AXI_ARLOCK_WIDTH = "1" *) (* G_AXI_ARPAYLOAD_WIDTH = "62" *) (* G_AXI_ARPROT_INDEX = "32" *) 
+(* G_AXI_ARPROT_WIDTH = "3" *) (* G_AXI_ARQOS_INDEX = "54" *) (* G_AXI_ARQOS_WIDTH = "4" *) 
+(* G_AXI_ARREGION_INDEX = "58" *) (* G_AXI_ARREGION_WIDTH = "4" *) (* G_AXI_ARSIZE_INDEX = "35" *) 
+(* G_AXI_ARSIZE_WIDTH = "3" *) (* G_AXI_ARUSER_INDEX = "62" *) (* G_AXI_ARUSER_WIDTH = "0" *) 
+(* G_AXI_AWADDR_INDEX = "0" *) (* G_AXI_AWADDR_WIDTH = "32" *) (* G_AXI_AWBURST_INDEX = "38" *) 
+(* G_AXI_AWBURST_WIDTH = "2" *) (* G_AXI_AWCACHE_INDEX = "40" *) (* G_AXI_AWCACHE_WIDTH = "4" *) 
+(* G_AXI_AWID_INDEX = "53" *) (* G_AXI_AWID_WIDTH = "1" *) (* G_AXI_AWLEN_INDEX = "44" *) 
+(* G_AXI_AWLEN_WIDTH = "8" *) (* G_AXI_AWLOCK_INDEX = "52" *) (* G_AXI_AWLOCK_WIDTH = "1" *) 
+(* G_AXI_AWPAYLOAD_WIDTH = "62" *) (* G_AXI_AWPROT_INDEX = "32" *) (* G_AXI_AWPROT_WIDTH = "3" *) 
+(* G_AXI_AWQOS_INDEX = "54" *) (* G_AXI_AWQOS_WIDTH = "4" *) (* G_AXI_AWREGION_INDEX = "58" *) 
+(* G_AXI_AWREGION_WIDTH = "4" *) (* G_AXI_AWSIZE_INDEX = "35" *) (* G_AXI_AWSIZE_WIDTH = "3" *) 
+(* G_AXI_AWUSER_INDEX = "62" *) (* G_AXI_AWUSER_WIDTH = "0" *) (* G_AXI_BID_INDEX = "2" *) 
+(* G_AXI_BID_WIDTH = "1" *) (* G_AXI_BPAYLOAD_WIDTH = "3" *) (* G_AXI_BRESP_INDEX = "0" *) 
+(* G_AXI_BRESP_WIDTH = "2" *) (* G_AXI_BUSER_INDEX = "3" *) (* G_AXI_BUSER_WIDTH = "0" *) 
+(* G_AXI_RDATA_INDEX = "0" *) (* G_AXI_RDATA_WIDTH = "64" *) (* G_AXI_RID_INDEX = "67" *) 
+(* G_AXI_RID_WIDTH = "1" *) (* G_AXI_RLAST_INDEX = "66" *) (* G_AXI_RLAST_WIDTH = "1" *) 
+(* G_AXI_RPAYLOAD_WIDTH = "68" *) (* G_AXI_RRESP_INDEX = "64" *) (* G_AXI_RRESP_WIDTH = "2" *) 
+(* G_AXI_RUSER_INDEX = "68" *) (* G_AXI_RUSER_WIDTH = "0" *) (* G_AXI_WDATA_INDEX = "0" *) 
+(* G_AXI_WDATA_WIDTH = "64" *) (* G_AXI_WID_INDEX = "73" *) (* G_AXI_WID_WIDTH = "0" *) 
+(* G_AXI_WLAST_INDEX = "72" *) (* G_AXI_WLAST_WIDTH = "1" *) (* G_AXI_WPAYLOAD_WIDTH = "73" *) 
+(* G_AXI_WSTRB_INDEX = "64" *) (* G_AXI_WSTRB_WIDTH = "8" *) (* G_AXI_WUSER_INDEX = "73" *) 
+(* G_AXI_WUSER_WIDTH = "0" *) (* ORIG_REF_NAME = "axi_register_slice_v2_1_17_axi_register_slice" *) (* P_FORWARD = "0" *) 
+(* P_RESPONSE = "1" *) 
+module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axi_register_slice
    (aclk,
+    aclk2x,
     aresetn,
     s_axi_awid,
     s_axi_awaddr,
@@ -462,6 +488,7 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice
     m_axi_rvalid,
     m_axi_rready);
   input aclk;
+  input aclk2x;
   input aresetn;
   input [0:0]s_axi_awid;
   input [31:0]s_axi_awaddr;
@@ -556,7 +583,7 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice
 
   wire \<const0> ;
   wire aclk;
-  wire ar_pipe_n_2;
+  wire \ar.ar_pipe_n_2 ;
   wire aresetn;
   wire [31:0]m_axi_araddr;
   wire [1:0]m_axi_arburst;
@@ -646,21 +673,21 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice
   assign s_axi_wready = m_axi_wready;
   GND GND
        (.G(\<const0> ));
-  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__parameterized2 ar_pipe
+  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axic_register_slice__parameterized2 \ar.ar_pipe 
        (.D({s_axi_arregion,s_axi_arqos,s_axi_arid,s_axi_arlock,s_axi_arlen,s_axi_arcache,s_axi_arburst,s_axi_arsize,s_axi_arprot,s_axi_araddr}),
         .Q({m_axi_arregion,m_axi_arqos,m_axi_arid,m_axi_arlock,m_axi_arlen,m_axi_arcache,m_axi_arburst,m_axi_arsize,m_axi_arprot,m_axi_araddr}),
         .aclk(aclk),
         .aresetn(aresetn),
         .m_axi_arready(m_axi_arready),
         .m_axi_arvalid(m_axi_arvalid),
-        .m_valid_i_reg_0(ar_pipe_n_2),
+        .m_valid_i_reg_0(\ar.ar_pipe_n_2 ),
         .p_0_in(p_0_in),
         .s_axi_arready(s_axi_arready),
         .s_axi_arvalid(s_axi_arvalid));
-  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__parameterized3 r_pipe
+  hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axic_register_slice__parameterized3 \r.r_pipe 
        (.Q({s_axi_rid,s_axi_rlast,s_axi_rresp,s_axi_rdata}),
         .aclk(aclk),
-        .\aresetn_d_reg[1] (ar_pipe_n_2),
+        .\aresetn_d_reg[1] (\ar.ar_pipe_n_2 ),
         .m_axi_rdata(m_axi_rdata),
         .m_axi_rid(m_axi_rid),
         .m_axi_rlast(m_axi_rlast),
@@ -672,8 +699,8 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axi_register_slice
         .s_axi_rvalid(s_axi_rvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_11_axic_register_slice" *) 
-module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__parameterized2
+(* ORIG_REF_NAME = "axi_register_slice_v2_1_17_axic_register_slice" *) 
+module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axic_register_slice__parameterized2
    (m_axi_arvalid,
     p_0_in,
     m_valid_i_reg_0,
@@ -1117,7 +1144,9 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
         .I2(s_axi_arvalid),
         .I3(m_valid_i_reg_0),
         .O(m_valid_i_i_1__0_n_0));
-  FDRE m_valid_i_reg
+  FDRE #(
+    .INIT(1'b0)) 
+    m_valid_i_reg
        (.C(aclk),
         .CE(1'b1),
         .D(m_valid_i_i_1__0_n_0),
@@ -1132,7 +1161,9 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
         .I3(s_axi_arvalid),
         .I4(p_0_in),
         .O(s_ready_i_i_1_n_0));
-  FDRE s_ready_i_reg
+  FDRE #(
+    .INIT(1'b0)) 
+    s_ready_i_reg
        (.C(aclk),
         .CE(1'b1),
         .D(s_ready_i_i_1_n_0),
@@ -1140,14 +1171,14 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_11_axic_register_slice" *) 
-module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__parameterized3
+(* ORIG_REF_NAME = "axi_register_slice_v2_1_17_axic_register_slice" *) 
+module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_17_axic_register_slice__parameterized3
    (s_axi_rvalid,
     m_axi_rready,
     Q,
     aclk,
-    m_axi_rvalid,
     s_axi_rready,
+    m_axi_rvalid,
     \aresetn_d_reg[1] ,
     p_0_in,
     m_axi_rid,
@@ -1158,8 +1189,8 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
   output m_axi_rready;
   output [67:0]Q;
   input aclk;
-  input m_axi_rvalid;
   input s_axi_rready;
+  input m_axi_rvalid;
   input \aresetn_d_reg[1] ;
   input [0:0]p_0_in;
   input [0:0]m_axi_rid;
@@ -1176,9 +1207,9 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
   wire m_axi_rready;
   wire [1:0]m_axi_rresp;
   wire m_axi_rvalid;
-  wire \m_payload_i[67]_i_1_n_0 ;
   wire m_valid_i_i_1_n_0;
   wire [0:0]p_0_in;
+  wire p_1_in;
   wire s_axi_rready;
   wire s_axi_rvalid;
   wire s_ready_i_i_1_n_0;
@@ -1761,7 +1792,7 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
     \m_payload_i[67]_i_1 
        (.I0(s_axi_rready),
         .I1(s_axi_rvalid),
-        .O(\m_payload_i[67]_i_1_n_0 ));
+        .O(p_1_in));
   (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT3 #(
     .INIT(8'hAC)) 
@@ -1804,422 +1835,424 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
         .O(skid_buffer[9]));
   FDRE \m_payload_i_reg[0] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[0]),
         .Q(Q[0]),
         .R(1'b0));
   FDRE \m_payload_i_reg[10] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[10]),
         .Q(Q[10]),
         .R(1'b0));
   FDRE \m_payload_i_reg[11] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[11]),
         .Q(Q[11]),
         .R(1'b0));
   FDRE \m_payload_i_reg[12] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[12]),
         .Q(Q[12]),
         .R(1'b0));
   FDRE \m_payload_i_reg[13] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[13]),
         .Q(Q[13]),
         .R(1'b0));
   FDRE \m_payload_i_reg[14] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[14]),
         .Q(Q[14]),
         .R(1'b0));
   FDRE \m_payload_i_reg[15] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[15]),
         .Q(Q[15]),
         .R(1'b0));
   FDRE \m_payload_i_reg[16] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[16]),
         .Q(Q[16]),
         .R(1'b0));
   FDRE \m_payload_i_reg[17] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[17]),
         .Q(Q[17]),
         .R(1'b0));
   FDRE \m_payload_i_reg[18] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[18]),
         .Q(Q[18]),
         .R(1'b0));
   FDRE \m_payload_i_reg[19] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[19]),
         .Q(Q[19]),
         .R(1'b0));
   FDRE \m_payload_i_reg[1] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[1]),
         .Q(Q[1]),
         .R(1'b0));
   FDRE \m_payload_i_reg[20] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[20]),
         .Q(Q[20]),
         .R(1'b0));
   FDRE \m_payload_i_reg[21] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[21]),
         .Q(Q[21]),
         .R(1'b0));
   FDRE \m_payload_i_reg[22] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[22]),
         .Q(Q[22]),
         .R(1'b0));
   FDRE \m_payload_i_reg[23] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[23]),
         .Q(Q[23]),
         .R(1'b0));
   FDRE \m_payload_i_reg[24] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[24]),
         .Q(Q[24]),
         .R(1'b0));
   FDRE \m_payload_i_reg[25] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[25]),
         .Q(Q[25]),
         .R(1'b0));
   FDRE \m_payload_i_reg[26] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[26]),
         .Q(Q[26]),
         .R(1'b0));
   FDRE \m_payload_i_reg[27] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[27]),
         .Q(Q[27]),
         .R(1'b0));
   FDRE \m_payload_i_reg[28] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[28]),
         .Q(Q[28]),
         .R(1'b0));
   FDRE \m_payload_i_reg[29] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[29]),
         .Q(Q[29]),
         .R(1'b0));
   FDRE \m_payload_i_reg[2] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[2]),
         .Q(Q[2]),
         .R(1'b0));
   FDRE \m_payload_i_reg[30] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[30]),
         .Q(Q[30]),
         .R(1'b0));
   FDRE \m_payload_i_reg[31] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[31]),
         .Q(Q[31]),
         .R(1'b0));
   FDRE \m_payload_i_reg[32] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[32]),
         .Q(Q[32]),
         .R(1'b0));
   FDRE \m_payload_i_reg[33] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[33]),
         .Q(Q[33]),
         .R(1'b0));
   FDRE \m_payload_i_reg[34] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[34]),
         .Q(Q[34]),
         .R(1'b0));
   FDRE \m_payload_i_reg[35] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[35]),
         .Q(Q[35]),
         .R(1'b0));
   FDRE \m_payload_i_reg[36] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[36]),
         .Q(Q[36]),
         .R(1'b0));
   FDRE \m_payload_i_reg[37] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[37]),
         .Q(Q[37]),
         .R(1'b0));
   FDRE \m_payload_i_reg[38] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[38]),
         .Q(Q[38]),
         .R(1'b0));
   FDRE \m_payload_i_reg[39] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[39]),
         .Q(Q[39]),
         .R(1'b0));
   FDRE \m_payload_i_reg[3] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[3]),
         .Q(Q[3]),
         .R(1'b0));
   FDRE \m_payload_i_reg[40] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[40]),
         .Q(Q[40]),
         .R(1'b0));
   FDRE \m_payload_i_reg[41] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[41]),
         .Q(Q[41]),
         .R(1'b0));
   FDRE \m_payload_i_reg[42] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[42]),
         .Q(Q[42]),
         .R(1'b0));
   FDRE \m_payload_i_reg[43] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[43]),
         .Q(Q[43]),
         .R(1'b0));
   FDRE \m_payload_i_reg[44] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[44]),
         .Q(Q[44]),
         .R(1'b0));
   FDRE \m_payload_i_reg[45] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[45]),
         .Q(Q[45]),
         .R(1'b0));
   FDRE \m_payload_i_reg[46] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[46]),
         .Q(Q[46]),
         .R(1'b0));
   FDRE \m_payload_i_reg[47] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[47]),
         .Q(Q[47]),
         .R(1'b0));
   FDRE \m_payload_i_reg[48] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[48]),
         .Q(Q[48]),
         .R(1'b0));
   FDRE \m_payload_i_reg[49] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[49]),
         .Q(Q[49]),
         .R(1'b0));
   FDRE \m_payload_i_reg[4] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[4]),
         .Q(Q[4]),
         .R(1'b0));
   FDRE \m_payload_i_reg[50] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[50]),
         .Q(Q[50]),
         .R(1'b0));
   FDRE \m_payload_i_reg[51] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[51]),
         .Q(Q[51]),
         .R(1'b0));
   FDRE \m_payload_i_reg[52] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[52]),
         .Q(Q[52]),
         .R(1'b0));
   FDRE \m_payload_i_reg[53] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[53]),
         .Q(Q[53]),
         .R(1'b0));
   FDRE \m_payload_i_reg[54] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[54]),
         .Q(Q[54]),
         .R(1'b0));
   FDRE \m_payload_i_reg[55] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[55]),
         .Q(Q[55]),
         .R(1'b0));
   FDRE \m_payload_i_reg[56] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[56]),
         .Q(Q[56]),
         .R(1'b0));
   FDRE \m_payload_i_reg[57] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[57]),
         .Q(Q[57]),
         .R(1'b0));
   FDRE \m_payload_i_reg[58] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[58]),
         .Q(Q[58]),
         .R(1'b0));
   FDRE \m_payload_i_reg[59] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[59]),
         .Q(Q[59]),
         .R(1'b0));
   FDRE \m_payload_i_reg[5] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[5]),
         .Q(Q[5]),
         .R(1'b0));
   FDRE \m_payload_i_reg[60] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[60]),
         .Q(Q[60]),
         .R(1'b0));
   FDRE \m_payload_i_reg[61] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[61]),
         .Q(Q[61]),
         .R(1'b0));
   FDRE \m_payload_i_reg[62] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[62]),
         .Q(Q[62]),
         .R(1'b0));
   FDRE \m_payload_i_reg[63] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[63]),
         .Q(Q[63]),
         .R(1'b0));
   FDRE \m_payload_i_reg[64] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[64]),
         .Q(Q[64]),
         .R(1'b0));
   FDRE \m_payload_i_reg[65] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[65]),
         .Q(Q[65]),
         .R(1'b0));
   FDRE \m_payload_i_reg[66] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[66]),
         .Q(Q[66]),
         .R(1'b0));
   FDRE \m_payload_i_reg[67] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[67]),
         .Q(Q[67]),
         .R(1'b0));
   FDRE \m_payload_i_reg[6] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[6]),
         .Q(Q[6]),
         .R(1'b0));
   FDRE \m_payload_i_reg[7] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[7]),
         .Q(Q[7]),
         .R(1'b0));
   FDRE \m_payload_i_reg[8] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[8]),
         .Q(Q[8]),
         .R(1'b0));
   FDRE \m_payload_i_reg[9] 
        (.C(aclk),
-        .CE(\m_payload_i[67]_i_1_n_0 ),
+        .CE(p_1_in),
         .D(skid_buffer[9]),
         .Q(Q[9]),
         .R(1'b0));
   LUT5 #(
-    .INIT(32'hBAFF0000)) 
+    .INIT(32'hFF2F0000)) 
     m_valid_i_i_1
-       (.I0(m_axi_rvalid),
+       (.I0(s_axi_rvalid),
         .I1(s_axi_rready),
-        .I2(s_axi_rvalid),
-        .I3(m_axi_rready),
+        .I2(m_axi_rready),
+        .I3(m_axi_rvalid),
         .I4(\aresetn_d_reg[1] ),
         .O(m_valid_i_i_1_n_0));
-  FDRE m_valid_i_reg
+  FDRE #(
+    .INIT(1'b0)) 
+    m_valid_i_reg
        (.C(aclk),
         .CE(1'b1),
         .D(m_valid_i_i_1_n_0),
@@ -2234,7 +2267,9 @@ module hdmi_out_s00_regslice_0_axi_register_slice_v2_1_11_axic_register_slice__p
         .I3(s_axi_rvalid),
         .I4(p_0_in),
         .O(s_ready_i_i_1_n_0));
-  FDRE s_ready_i_reg
+  FDRE #(
+    .INIT(1'b0)) 
+    s_ready_i_reg
        (.C(aclk),
         .CE(1'b1),
         .D(s_ready_i_i_1_n_0),
@@ -2699,8 +2734,8 @@ module glbl ();
     reg JTAG_USER_TDO3_GLBL = 1'bz;
     reg JTAG_USER_TDO4_GLBL = 1'bz;
 
-    assign (weak1, weak0) GSR = GSR_int;
-    assign (weak1, weak0) GTS = GTS_int;
+    assign (strong1, weak0) GSR = GSR_int;
+    assign (strong1, weak0) GTS = GTS_int;
     assign (weak1, weak0) PRLD = PRLD_int;
 
     initial begin
